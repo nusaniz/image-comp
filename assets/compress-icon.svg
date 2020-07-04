@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="141" height="179" viewBox="0 0 141 179">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.155" y1="1" x2="1.342" y2="0.143" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4327f0"/>
+      <stop offset="1" stop-color="#9dede1"/>
+    </linearGradient>
+    <filter id="tets" x="0" y="0" width="141" height="179" filterUnits="userSpaceOnUse">
+      <feOffset dx="-4" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-color="#4327f0" flood-opacity="0.451"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#tets)">
+    <path id="tets-2" data-name="tets" d="M111.922,31.172,82.858,2.078A7.12,7.12,0,0,0,77.811,0H76V38h38V36.189A7.1,7.1,0,0,0,111.922,31.172ZM38.119,99.75c-5.314,0-9.619,3.592-9.619,8.016,0,4.453,4.334,8.016,9.648,8.016s9.619-3.592,9.619-8.016S43.433,99.75,38.119,99.75ZM66.5,40.375V0H47.619V9.5h-9.5V0H7.125A7.108,7.108,0,0,0,0,7.125v137.75A7.108,7.108,0,0,0,7.125,152h99.75A7.108,7.108,0,0,0,114,144.875V47.5H73.625A7.146,7.146,0,0,1,66.5,40.375ZM28.47,9.5h9.5V19h-9.5Zm9.589,114A15.568,15.568,0,0,1,22.8,104.827L28.619,76V66.5h9.5V57h-9.5V47.5h9.5V38h-9.5V28.5h9.5V19h9.5v9.5h-9.5V38h9.5v9.5h-9.5V57h9.5v9.5h-9.5V76H44.68a3.59,3.59,0,0,1,3.5,2.88l5.136,26.036A15.567,15.567,0,0,1,38.059,123.5Z" transform="translate(17.5 9.5)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

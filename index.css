@@ -1,0 +1,166 @@
+/* ##################################################################### */
+/* ## DEFAULTS ######################################################### */
+/* ##################################################################### */
+
+body {
+    margin: 0;
+    height: 100vh;
+    
+    background: rgb(157,237,225);
+    background: linear-gradient(135deg, rgba(157,237,225,1) 5%, rgba(67,39,240,1) 87%);
+
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    font-family: 'Rubik', sans-serif;
+
+    user-select: none;
+}
+
+h1 {
+    font-weight: 500;
+    font-size  : 25px;
+    opacity    : .75;
+
+    padding: 0;
+    margin : 0 0 5px 0;
+}
+
+span {
+    font-weight: 300;
+    font-size  : 16px;
+    opacity    : .62;
+}
+
+
+
+
+
+/* ##################################################################### */
+/* ## DROP-CONTAINER ################################################### */
+/* ##################################################################### */
+
+.drop-container {
+    background: url('./assets/compress-background.png') no-repeat center #fff;
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 8px 6px 17px rgba(0, 0, 0, .18);
+
+    padding: 100px 200px;
+
+    transition: background-color .25s ease-in-out, padding 1s ease-in-out;
+}
+
+.drop-container.drag {
+    background-color: rgba(255, 255, 255, .75);
+}
+.drop-container.err {
+    animation: err 1.25s ease-in-out;
+}
+
+.drop-container .drop-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.drop-container .drop-content img {
+    pointer-events: none;
+    animation: move both alternate 1.5s ease-in-out infinite;
+}
+
+.drop-container .drop-content .drop-text {
+    margin-top: 75px;
+}
+
+.drop-container .progress-container {
+    max-height: 0;
+    height    : 40px;
+    min-width : 450px;
+
+    border-radius: 40px;
+    margin-top   : 50px;
+    
+    background: #1A153D20;
+
+    transition: max-height 1s ease-in-out, opacity .25s ease-in-out, transform .25s ease-in-out;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.drop-container .progress-container span {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-55%);
+
+    color  : #fff;
+    opacity: 1;
+
+    font-size: 14px;
+
+    pointer-events: none;
+}
+
+.drop-container .progress-container .current-progress {
+    width : 0%;
+    height: 100%;
+
+    border-radius: 40px;
+    background: linear-gradient(45deg, #FDC36D, #EE44A1);
+    box-shadow: -4px 4px 9px #EE44A145;
+
+    transition: width 2s ease-in-out;
+}
+
+.drop-container .progress-container.dl:hover {
+    cursor: pointer;
+    opacity: .75;
+    transform: scale(1.025);
+}
+
+
+
+
+
+/* ##################################################################### */
+/* ## ANIMATIONS ####################################################### */
+/* ##################################################################### */
+
+@keyframes err {
+    from {
+        background-color: rgb(238, 109, 109);
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-15px);
+    }
+
+    50% {
+        transform: translateX(15px);
+    }
+
+    75% {
+        transform: translateX(-15px);
+    }
+
+    to {
+        transform: translateX(0);
+        background-color: #fff;
+    }
+}
+
+@keyframes move {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.9);
+    }
+}
